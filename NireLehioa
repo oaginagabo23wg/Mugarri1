@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class NireLehioa extends JFrame {
+    void NireLeihoa()
+    {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(600,400));
+        setLayout(new BorderLayout());
+        JPanel North = new JPanel();
+            North.setLayout(new FlowLayout());
+            add(North, BorderLayout.NORTH);
+            JCheckBox checkBox1 = new JCheckBox("Katniss");
+            checkBox1.setBounds(100,100,50,50);
+            JCheckBox checkBox2 = new JCheckBox("Peeta");
+            checkBox2.setBounds(100,150,50,50);
+            North.add(checkBox1);
+            North.add(checkBox2);
+        JPanel South = new JPanel();
+            South.setLayout(new BoxLayout(South,BoxLayout.X_AXIS));
+            add(South, BorderLayout.SOUTH);
+            JToggleButton button1 = new JToggleButton("But 1");
+            JToggleButton button2 = new JToggleButton("But 2");
+            South.add(button1);
+            South.add(button2);
+            South.setSize(400,50);
+        JPanel Center = new JPanel();
+            add(Center, BorderLayout.CENTER);
+            Center.setLayout(new GridLayout(2,2));
+            ImageIcon loreak = new ImageIcon(".\\irudiak\\flores.jpg");
+            for (int i = 0; i < 4; i++) {
+                JLabel label = new JLabel(loreak);
+                Center.add(label);
+            }
+        JPanel East = new JPanel();
+            add(East, BorderLayout.EAST);
+            JRadioButton radiobutton1 = new JRadioButton("OPT 1", true);
+            JRadioButton radiobutton2 = new JRadioButton("OPT 2");
+            JRadioButton radiobutton3 = new JRadioButton("OPT 3");
+            ButtonGroup group = new ButtonGroup();
+            group.add(radiobutton1);
+            group.add(radiobutton2);
+            group.add(radiobutton3);
+            East.add(radiobutton1);
+            East.add(radiobutton2);
+            East.add(radiobutton3);
+        pack();
+        setVisible(true);
+    }
+}
