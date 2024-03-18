@@ -4,47 +4,52 @@ import java.awt.*;
 public class NireLehioa extends JFrame {
     void NireLeihoa()
     {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(600,400));
-        setLayout(new BorderLayout());
-        JPanel North = new JPanel();
-            North.setLayout(new FlowLayout());
-            add(North, BorderLayout.NORTH);
+        JFrame frame = new JFrame("Try yourself");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(600,400));
+        frame.setLayout(new BorderLayout());
+        JPanel north = new JPanel();
+            north.setLayout(new FlowLayout());
+            frame.add(north, BorderLayout.NORTH);
             JCheckBox checkBox1 = new JCheckBox("Katniss");
             checkBox1.setBounds(100,100,50,50);
             JCheckBox checkBox2 = new JCheckBox("Peeta");
             checkBox2.setBounds(100,150,50,50);
-            North.add(checkBox1);
-            North.add(checkBox2);
-        JPanel South = new JPanel();
-            South.setLayout(new BoxLayout(South,BoxLayout.X_AXIS));
-            add(South, BorderLayout.SOUTH);
+            north.add(checkBox1);
+            north.add(checkBox2);
+        JPanel south = new JPanel();
+            south.setLayout(new BoxLayout(south,BoxLayout.X_AXIS));
+            frame.add(south, BorderLayout.SOUTH);
             JToggleButton button1 = new JToggleButton("But 1");
             JToggleButton button2 = new JToggleButton("But 2");
-            South.add(button1);
-            South.add(button2);
-            South.setSize(400,50);
-        JPanel Center = new JPanel();
-            add(Center, BorderLayout.CENTER);
-            Center.setLayout(new GridLayout(2,2));
+            south.add(button1);
+            south.add(button2);
+            south.setSize(400,50);
+        JPanel center = new JPanel();
+            frame.add(center, BorderLayout.CENTER);
+            center.setLayout(new GridLayout(2,2));
             ImageIcon loreak = new ImageIcon(".\\irudiak\\flores.jpg");
             for (int i = 0; i < 4; i++) {
                 JLabel label = new JLabel(loreak);
-                Center.add(label);
+                center.add(label);
             }
-        JPanel East = new JPanel();
-            add(East, BorderLayout.EAST);
+        JPanel east = new JPanel();
+            frame.add(east, BorderLayout.EAST);
+            east.setLayout(null);
             JRadioButton radiobutton1 = new JRadioButton("OPT 1", true);
             JRadioButton radiobutton2 = new JRadioButton("OPT 2");
             JRadioButton radiobutton3 = new JRadioButton("OPT 3");
+            radiobutton1.setBounds(0,0,50,50);
+            radiobutton2.setBounds(50,0,50,50);
+            radiobutton3.setBounds(100,0,50,50);
             ButtonGroup group = new ButtonGroup();
             group.add(radiobutton1);
             group.add(radiobutton2);
             group.add(radiobutton3);
-            East.add(radiobutton1);
-            East.add(radiobutton2);
-            East.add(radiobutton3);
-        pack();
-        setVisible(true);
+            east.add(radiobutton1);
+            east.add(radiobutton2);
+            east.add(radiobutton3);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
